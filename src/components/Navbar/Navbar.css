@@ -11,7 +11,7 @@
   display: flex;
   list-style: none;
   gap: 20px;
-  color: #49557e;
+  color: tomato;
   font-size: 18px;
 }
 .pothe__pothe__navbar__menu__container li {
@@ -19,7 +19,7 @@
 }
 .pothe__pothe__navbar__menu__container .active {
   padding-bottom: 2px;
-  border-bottom: 2px solid #49557e;
+  border-bottom: 2px solid tomato;
 }
 .pothe__pothe__navbar__right {
   display: flex;
@@ -29,17 +29,19 @@
 .pothe__pothe__navbar__sign__in__btn {
   background: transparent;
   font-size: 16px;
-  color: #49557e;
+  color: #000;
   border: 1px solid tomato;
   padding: 7px 30px;
   border-radius: 50px;
   cursor: pointer;
   transition: 0.3s;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .pothe__pothe__navbar__sign__in__btn:hover {
-  background-color: #49557e;
-  color: tomato;
+  background-color: tomato;
+  color: #fff; 
 }
 .pothe__pothe__navbar__basket__icon {
   position: relative;

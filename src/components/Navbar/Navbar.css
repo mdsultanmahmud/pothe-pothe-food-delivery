@@ -1,0 +1,55 @@
+.pothe__pothe__navbar__container {
+  padding: 20px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pothe__pothe__navbar__logo__container img {
+  width: 150px;
+}
+.pothe__pothe__navbar__menu__container {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  color: #49557e;
+  font-size: 18px;
+}
+.pothe__pothe__navbar__menu__container li {
+  cursor: pointer;
+}
+.pothe__pothe__navbar__menu__container .active {
+  padding-bottom: 2px;
+  border-bottom: 2px solid #49557e;
+}
+.pothe__pothe__navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.pothe__pothe__navbar__sign__in__btn {
+  background: transparent;
+  font-size: 16px;
+  color: #49557e;
+  border: 1px solid tomato;
+  padding: 7px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pothe__pothe__navbar__sign__in__btn:hover {
+  background-color: #49557e;
+  color: tomato;
+}
+.pothe__pothe__navbar__basket__icon {
+  position: relative;
+}
+.pothe__pothe__search__dot {
+    position: absolute;
+    top: -8px;
+    right:-8px;
+    width: 10px;
+    height: 10px;
+    background-color: tomato;
+    border-radius: 5px;
+}

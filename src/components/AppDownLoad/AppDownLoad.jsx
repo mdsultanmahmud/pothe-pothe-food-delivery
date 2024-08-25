@@ -2,7 +2,7 @@ import { assets } from "../../assets/assets";
 import "./AppDownLoad.css";
 const AppDownLoad = () => {
   return (
-    <div className="pothe__pothe__app__download__container">
+    <div className="pothe__pothe__app__download__container" id="mobile-app">
       <p>
         For Better Experience Download <br />
         PothePothe App

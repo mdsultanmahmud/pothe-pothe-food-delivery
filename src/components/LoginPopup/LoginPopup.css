@@ -1,0 +1,86 @@
+.pothe__pothe__login__popup__container {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #00000090;
+  display: grid;
+  margin: 0 auto;
+  left: 0;
+  top: 0;
+}
+.pothe__pothe__login__popup__content {
+  place-self: center;
+  width: max(23vw, 330px);
+  color: #808080;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 25px 30px;
+  border-radius: 8px;
+  font-size: 15px;
+  animation: fadeIn 0.5s;
+}
+
+.login__popup__form__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.popup__login__title__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.popup__login__title__container h1 {
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: tomato;
+}
+.popup__login__title__container img {
+  width: 20px;
+  cursor: pointer;
+}
+
+.input__field {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input__field input {
+  font-size: 15px;
+  outline: none;
+  border: 1px solid #c9c9c9;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.login__popup__btn {
+  border: 1px solid tomato;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: tomato;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.login__popup__btn:hover {
+  background-color: #fff;
+  color: tomato;
+}
+
+.login__popup__link {
+  color: tomato;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 18px;
+}

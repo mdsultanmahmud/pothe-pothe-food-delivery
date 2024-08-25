@@ -4,7 +4,6 @@ import Home from "../pages/Home/Home";
 import Contact from "../pages/Contact/Contact";
 import Cart from "../pages/Cart/Cart";
 import PlaceOrder from "../pages/PlaceOrder/PlaceOrder";
-import Register from "../pages/Register/Register";
 
 const router = createBrowserRouter([
   {
@@ -27,10 +26,7 @@ const router = createBrowserRouter([
         path: "/place-order",
         element: <PlaceOrder />,
       },
-      {
-        path: "/sign-in",
-        element: <Register />,
-      },
+    
     ],
   },
 ]);

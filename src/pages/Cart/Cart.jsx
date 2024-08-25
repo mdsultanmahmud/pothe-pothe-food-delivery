@@ -4,7 +4,8 @@ import { StoreContext } from "../../context/StoreContext";
 import { RxCross2 } from "react-icons/rx";
 
 const Cart = () => {
-  const { food_list, cartItems, removeFromCart } = useContext(StoreContext);
+  const { food_list, cartItems, removeFromCart, getTotalCartAmount } =
+    useContext(StoreContext);
   return (
     <div className="pothe__pothe__cart__container">
       <div className="pothe__pothe__cart__items__container">
@@ -50,17 +51,17 @@ const Cart = () => {
           <div>
             <div className="sub__total__details">
               <p>Sub Total</p>
-              <p>{0}</p>
+              <p>${getTotalCartAmount()}</p>
             </div>
             <hr />
             <div className="sub__total__details">
               <p>Delivery free</p>
-              <p>{2}</p>
+              <p>${5}</p>
             </div>
             <hr />
             <div className="sub__total__details">
               <b>Total</b>
-              <b>{0}</b>
+              <b>${getTotalCartAmount() + 5}</b>
             </div>
           </div>
           <button>proceed to checkout</button>

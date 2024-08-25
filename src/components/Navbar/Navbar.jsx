@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import LoginPopup from "../LoginPopup/LoginPopup";
+import { StoreContext } from "../../context/StoreContext";
 const Navbar = () => {
+  const { getTotalCartAmount } = useContext(StoreContext);
   const [menu, setMenu] = useState("home");
   const [showloginPopup, setShowLoginPopup] = useState(false);
   const handleScrolling = (element) => {
@@ -14,7 +16,7 @@ const Navbar = () => {
   };
   return (
     <>
-      {showloginPopup && <LoginPopup setShowLoginPopup={setShowLoginPopup}/>}
+      {showloginPopup && <LoginPopup setShowLoginPopup={setShowLoginPopup} />}
       <div className="pothe__pothe__navbar__container">
         <div className="pothe__pothe__navbar__logo__container">
           <Link to={"/"}>
@@ -59,7 +61,9 @@ const Navbar = () => {
             <Link to={"/cart"}>
               <img src={assets.basket_icon} alt="" />
             </Link>
-            <div className="pothe__pothe__search__dot"></div>
+            {getTotalCartAmount() > 0 && (
+              <div className="pothe__pothe__search__dot"></div>
+            )}
           </div>
 
           <button

@@ -5,7 +5,7 @@
   gap: 20px;
   color: #fff;
   background-color: #323232;
-  padding:30px;
+  padding: 30px;
   padding-top: 80px;
   margin-top: 80px;
 }
@@ -40,21 +40,45 @@
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 1px;
+}
+.pothe__pothe__footer__content__left p {
+  letter-spacing: 1px;
+}
+.footer__social__icons img {
+  width: 40px;
+  margin-right: 15px;
+  cursor: pointer;
+}
 
-}
-.pothe__pothe__footer__content__left p{
-   letter-spacing: 1px;
-}
-.footer__social__icons img{
-    width: 40px;
-    margin-right: 15px;
-    cursor: pointer;
+.pothe__pothe__footer__container hr {
+  width: 100%;
+  height: 2px;
+  margin: 20px 0px;
+  border: none;
+  background-color: grey;
 }
 
-.pothe__pothe__footer__container hr{
-    width: 100%;
-    height: 2px;
-    margin: 20px 0px;
-    border: none;
-    background-color: grey;
+@media screen and (max-width: 1050px) {
+  .pothe__pothe__footer__content {
+    gap: 50px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .pothe__pothe__footer__container {
+    padding: 20px;
+    padding-top: 60px;
+  }
+  .pothe__pothe__footer__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .pothe__pothe__footer__content__center h2,
+  .pothe__pothe__footer__content__right h2 {
+    font-size: 20px;
+  }
+  .footer__copyright {
+    text-align: center;
+  }
 }

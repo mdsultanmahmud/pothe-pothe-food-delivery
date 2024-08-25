@@ -15,8 +15,6 @@
 .pothe__pothe__explore__menu__desc {
   font-size: 16px;
   max-width: 60%;
-  /* text-align: center;
-  margin: 0 auto; */
 }
 
 .pothe__pothe__explore__menu__list {
@@ -29,8 +27,8 @@
   overflow-x: scroll;
   cursor: pointer;
 }
-.pothe__pothe__explore__menu__list::-webkit-scrollbar{
-    /* display: none; */
+.pothe__pothe__explore__menu__list::-webkit-scrollbar {
+  /* display: none; */
 }
 .pothe__pothe__explore__menu__list__item img {
   min-width: 80px;
@@ -44,12 +42,29 @@
   color: tomato;
 }
 
-.pothe__pothe__explore__menu__container hr{
-    margin: 10px 0;
-    border: none;
-    height: 2px;
-    background-color: #e2e2e2;
+.pothe__pothe__explore__menu__container hr {
+  margin: 10px 0;
+  border: none;
+  height: 2px;
+  background-color: #e2e2e2;
 }
-.pothe__pothe__explore__menu__list__item .active{
+.pothe__pothe__explore__menu__list__item .active {
   border: 4px solid tomato;
+}
+
+@media screen and (max-width: 1050px) {
+  .pothe__pothe__explore__menu__desc {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .pothe__pothe__explore__menu__container h1 {
+    font-size: 22px;
+  }
+  .pothe__pothe__explore__menu__desc {
+    max-width: 100%;
+  }
+  .pothe__pothe__explore__menu__list__item img {
+    width: 100px !important;
+  }
 }

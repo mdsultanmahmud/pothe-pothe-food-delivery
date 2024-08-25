@@ -41,17 +41,60 @@
 
 .pothe__pothe__navbar__sign__in__btn:hover {
   background-color: tomato;
-  color: #fff; 
+  color: #fff;
 }
 .pothe__pothe__navbar__basket__icon {
   position: relative;
 }
 .pothe__pothe__search__dot {
-    position: absolute;
-    top: -8px;
-    right:-8px;
-    width: 10px;
-    height: 10px;
-    background-color: tomato;
-    border-radius: 5px;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 10px;
+  height: 10px;
+  background-color: tomato;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 1050px) {
+  .pothe__pothe__navbar__logo__container img {
+    width: 120px;
+  }
+  .pothe__pothe__navbar__menu__container {
+    font-size: 17px;
+  }
+  .pothe__pothe__navbar__right {
+    gap: 30px;
+  }
+  .pothe__pothe__navbar__right img {
+    width: 22px;
+  }
+  .pothe__pothe__navbar__sign__in__btn {
+    padding: 7px 25px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .pothe__pothe__navbar__logo__container img {
+    width: 120px;
+  }
+  .pothe__pothe__navbar__menu__container {
+    font-size: 16px;
+    gap: 15px;
+  }
+  .pothe__pothe__navbar__right {
+    gap: 20px;
+  }
+  .pothe__pothe__navbar__right img {
+    width: 20px;
+  }
+  .pothe__pothe__navbar__sign__in__btn {
+    padding: 7px 20px;
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .pothe__pothe__navbar__menu__container {
+    display: none;
+  }
 }

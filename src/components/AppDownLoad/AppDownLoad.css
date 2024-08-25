@@ -23,3 +23,9 @@
 .app__download__platforms img:hover {
   transform: scale(1.2);
 }
+
+@media screen and (max-width: 750px) {
+  .pothe__pothe__app__download__container {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,45 @@
+.pothe__pothe__place__order__container {
+  margin: 50px 0px;
+  display: grid;
+  place-items: center;
+  height: 70vh;
+}
+.pothe__pothe__place__order__form {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 50px;
+  width: 100%;
+}
+.place__order__left{
+    width: 100%;
+    max-width: max(30%, 500px);
+}
+.place__order__title{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    color: grey;
+}
+.place__order__left input{
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c5c5c5;
+    border-radius: 5px;
+    outline-color: tomato;
+    font-size: 16px;
+}
+
+.place__multi__input__fields{
+    display: flex;
+    gap: 10px;
+}
+.place__order__right{
+    width: 100%;
+    max-width: max(40%, 500px);
+}
+
+.place__order__right button{
+    margin-top: 50px;
+}

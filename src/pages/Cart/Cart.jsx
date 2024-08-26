@@ -2,10 +2,12 @@ import { useContext } from "react";
 import "./Cart.css";
 import { StoreContext } from "../../context/StoreContext";
 import { RxCross2 } from "react-icons/rx";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { food_list, cartItems, removeFromCart, getTotalCartAmount } =
     useContext(StoreContext);
+  const navigate = useNavigate();
   return (
     <div className="pothe__pothe__cart__container">
       <div className="pothe__pothe__cart__items__container">
@@ -56,15 +58,19 @@ const Cart = () => {
             <hr />
             <div className="sub__total__details">
               <p>Delivery free</p>
-              <p>${5}</p>
+              <p>${getTotalCartAmount() === 0 ? 0 : 5}</p>
             </div>
             <hr />
             <div className="sub__total__details">
               <b>Total</b>
-              <b>${getTotalCartAmount() + 5}</b>
+              <b>
+                ${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 5}
+              </b>
             </div>
           </div>
-          <button>proceed to checkout</button>
+          <button onClick={() => navigate("/place-order")}>
+            proceed to checkout
+          </button>
         </div>
         <div className="cart__promocode__container">
           <div>

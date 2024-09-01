@@ -11,7 +11,11 @@ const FoodItemCard = ({ item }) => {
   return (
     <div className="pothe__pothe__food__item__card__container">
       <div className="item__card__img__container">
-        <img className="item__card__img" src={image} alt="" />
+        <img
+          className="item__card__img"
+          src={`http://localhost:5000/images/${image}`}
+          alt=""
+        />
         {!cartItems[_id] ? (
           <img
             className="item__card__add"

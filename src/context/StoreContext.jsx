@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
+import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-import { food_list } from "../assets/assets";
+import { url } from "../utils/getUrl";
 export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const [token, setToken] = useState(null);
+  const [food_list, setFoodList] = useState([]);
   const addToCart = (itemId) => {
     if (!cartItems[itemId]) {
       setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
@@ -28,10 +30,19 @@ const StoreContextProvider = (props) => {
     return totalAmount;
   };
   useEffect(() => {
+    const fetchFood = async () => {
+      const response = await axios.get(
+        `${url?.baseURL || url?.deploymentURL}/food`
+      );
+      if (response.data.success) {
+        setFoodList(response.data.data);
+      }
+    };
     const authtoken = localStorage.getItem("authToken");
     if (authtoken) {
       setToken(authtoken);
     }
+    fetchFood();
   }, []);
   const contextValue = {
     food_list,

@@ -29,7 +29,10 @@ const Cart = () => {
                   className="cart__items__item cart__items__title"
                   key={index}
                 >
-                  <img src={item?.image} alt="" />
+                  <img
+                    src={`http://localhost:5000/images/${item?.image}`}
+                    alt=""
+                  />
                   <p>{item?.name}</p>
                   <p>${item?.price}</p>
                   <p>{cartItems[item._id]}</p>

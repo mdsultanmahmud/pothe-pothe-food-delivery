@@ -1,11 +1,13 @@
 import { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LoginPopup from "../LoginPopup/LoginPopup";
 import { StoreContext } from "../../context/StoreContext";
+import toast from "react-hot-toast";
 const Navbar = () => {
-  const { getTotalCartAmount } = useContext(StoreContext);
+  const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
+  const navigate = useNavigate();
   const [menu, setMenu] = useState("home");
   const [showloginPopup, setShowLoginPopup] = useState(false);
   const handleScrolling = (element) => {
@@ -14,6 +16,13 @@ const Navbar = () => {
       ele.scrollIntoView({ behavior: "smooth" });
     }
   };
+  const handleLogout = () => {
+    toast.success("Successfully Logout.");
+    localStorage.removeItem("authToken");
+    setToken(null);
+    navigate("/");
+  };
+
   return (
     <>
       {showloginPopup && <LoginPopup setShowLoginPopup={setShowLoginPopup} />}
@@ -65,13 +74,21 @@ const Navbar = () => {
               <div className="pothe__pothe__search__dot"></div>
             )}
           </div>
-
-          <button
-            onClick={() => setShowLoginPopup(true)}
-            className="pothe__pothe__navbar__sign__in__btn"
-          >
-            Sign In
-          </button>
+          {!token ? (
+            <button
+              onClick={() => setShowLoginPopup(true)}
+              className="pothe__pothe__navbar__sign__in__btn"
+            >
+              Sign In
+            </button>
+          ) : (
+            <button
+              onClick={handleLogout}
+              className="pothe__pothe__navbar__sign__in__btn"
+            >
+              Logout
+            </button>
+          )}
         </div>
       </div>
     </>

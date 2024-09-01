@@ -1,10 +1,55 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
+import { url } from "../../utils/getUrl";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { saveToken } from "../../utils/saveToken";
+import { StoreContext } from "../../context/StoreContext";
 const LoginPopup = ({ setShowLoginPopup }) => {
+  const { setToken } = useContext(StoreContext);
   const [currentState, setCurrentState] = useState("login");
   const popupRef = useRef();
+
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const handleInputChange = (e) => {
+    setData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      let newURL = url?.baseURL || url?.deploymentURL;
+      if (currentState === "login") {
+        newURL += "/user/login";
+      } else {
+        newURL += "/user/register";
+      }
+
+      const response = await axios.post(newURL, data);
+      if (response.data.success) {
+        toast.success(response.data.message);
+        saveToken(response.data.authtoken);
+        setToken(response.data.authtoken);
+        setShowLoginPopup(false);
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong!");
+    }
+  };
+
+  // remove popup by clicking outside
   useEffect(() => {
     const handleClickOutSide = (event) => {
       if (popupRef.current && !popupRef.current.contains(event.target)) {
@@ -28,15 +73,33 @@ const LoginPopup = ({ setShowLoginPopup }) => {
             alt=""
           />
         </div>
-        <form className="login__popup__form__container">
+        <form onSubmit={handleLogin} className="login__popup__form__container">
           <div className="input__field">
             {currentState === "Sign Up" && (
               <>
-                <input type="text" placeholder="Your Name" required />
+                <input
+                  onChange={(e) => handleInputChange(e)}
+                  type="text"
+                  placeholder="Your Name"
+                  required
+                  name="name"
+                />
               </>
             )}
-            <input type="email" placeholder="Your Email" required />
-            <input type="text" placeholder="Your Password" required />
+            <input
+              onChange={(e) => handleInputChange(e)}
+              type="email"
+              placeholder="Your Email"
+              required
+              name="email"
+            />
+            <input
+              onChange={(e) => handleInputChange(e)}
+              type="text"
+              placeholder="Your Password"
+              required
+              name="password"
+            />
           </div>
           <button className="login__popup__btn">
             {currentState === "Sign Up" ? "Create Account" : "Sign In"}
